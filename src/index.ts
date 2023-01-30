@@ -1,5 +1,5 @@
 import {someFn} from "./text";
 
-someFn(23)
+someFn(7)
 
-console.log('лёшка')
+console.log('Алёшка')
