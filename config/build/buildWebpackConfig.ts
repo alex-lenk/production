@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import TerserPlugin from 'terser-webpack-plugin'
 import {BuildOption} from './type/config'
 import {buildPlugins} from './buildPlugins'
 import {buildLoader} from './buildLoader'
@@ -18,10 +19,23 @@ export function buildWebpackConfig(options: BuildOption): webpack.Configuration 
         },
         plugins: buildPlugins(options),
         module: {
-            rules: buildLoader()
+            rules: buildLoader(options)
         },
         resolve: buildResolvers(),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    extractComments: false,
+                    terserOptions: {
+                        format: {
+                            comments: false,
+                        },
+                    },
+                }),
+            ],
+        },
     }
 }
