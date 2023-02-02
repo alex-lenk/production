@@ -1,0 +1,9 @@
+@import 'variables/global';
+@import 'reboot';
+@import 'thems/normal';
+@import 'thems/dark';
+
+.app {
+  min-height: 100%;
+  font-size: 22px;
+}
