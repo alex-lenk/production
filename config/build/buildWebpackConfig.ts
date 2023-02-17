@@ -1,12 +1,12 @@
+import {BuildOptions} from './types/config'
 import webpack from 'webpack'
-import TerserPlugin from 'terser-webpack-plugin'
-import {BuildOption} from './type/config'
+import path from 'path'
 import {buildPlugins} from './buildPlugins'
-import {buildLoader} from './buildLoader'
+import {buildLoaders} from './buildLoaders'
 import {buildResolvers} from './buildResolvers'
-import buildDevServer from './buildDevServer'
+import {buildDevServer} from './buildDevServer'
 
-export function buildWebpackConfig(options: BuildOption): webpack.Configuration {
+export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
     const {paths, mode, isDev} = options
 
     return {
@@ -15,27 +15,14 @@ export function buildWebpackConfig(options: BuildOption): webpack.Configuration 
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,
-            clean: true
+            clean: true,
         },
         plugins: buildPlugins(options),
         module: {
-            rules: buildLoader(options)
+            rules: buildLoaders(options)
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
-        optimization: {
-            minimize: true,
-            minimizer: [
-                new TerserPlugin({
-                    extractComments: false,
-                    terserOptions: {
-                        format: {
-                            comments: false,
-                        },
-                    },
-                }),
-            ],
-        },
     }
 }
