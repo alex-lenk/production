@@ -5,12 +5,13 @@ import {AboutPageAsync} from './pages/AboutPage/AboutPage.async'
 import {MainPageAsync} from './pages/MainPage/MainPage.async'
 import Counter from './components/Counter'
 import {useTheme} from './theme/useTheme'
+import {classNames} from './helpers/classNames/classNames'
 
 const App = () => {
     const {toggleTheme} = useTheme()
 
     return (
-        <div className="app">
+        <div className={classNames('app', {hovered: true, selectable: true}, ['theme', 'cls'])}>
             <h1 className="app">App</h1>
 
             <button className="btn btn-primary" onClick={toggleTheme}>toggle</button>
