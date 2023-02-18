@@ -1,9 +1,8 @@
-@import 'variables/global';
+@import './variables/_global.scss';
 @import 'reboot';
-@import 'thems/normal';
-@import 'thems/dark';
+@import './themes/normal';
+@import './themes/dark';
 
 .app {
-  min-height: 100%;
-  font-size: 22px;
+  min-height: 100vh;
 }

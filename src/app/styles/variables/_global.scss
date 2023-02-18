@@ -66,7 +66,6 @@
   --white-rgb: 255, 255, 255;
   --black-rgb: 0, 0, 0;
   --body-color-rgb: 33, 37, 41;
-  --body-bg-rgb: 255, 255, 255;
   --font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -75,7 +74,7 @@
   --body-font-weight: 400;
   --body-line-height: 1.5;
   --body-color: #212529;
-  --emphasis-color: #000;
+  --inverted-body-color: #212529;
   --emphasis-color-rgb: 0, 0, 0;
   --secondary-color: rgba(33, 37, 41, 0.75);
   --secondary-color-rgb: 33, 37, 41;
@@ -93,7 +92,6 @@
   --link-hover-color: #0a58ca;
   --link-hover-color-rgb: 10, 88, 202;
   --code-color: #d63384;
-  --highlight-bg: #fff3cd;
   --border-width: 1px;
   --border-style: solid;
   --border-color: #dee2e6;
