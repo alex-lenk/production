@@ -37,4 +37,3 @@ export const AppLink = (props: AppLinkProps) => {
         </Link>
     )
 }
-
