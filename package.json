@@ -12,6 +12,8 @@
   "author": "alexlenk",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "@svgr/webpack": "^6.5.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
@@ -19,6 +21,8 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-i18next-extract": "^0.9.0",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
