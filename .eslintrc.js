@@ -8,6 +8,8 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -26,13 +28,12 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
         'unused-imports/no-unused-imports': 'error',
-        indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -60,19 +61,33 @@ module.exports = {
                     'border',
                     'direction',
                     'gap',
+                    'feature',
                 ],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 125 }],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 125,
+            },
+        ],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
-        'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies,
+        'react-hooks/rules-of-hooks': 'error',
+        // Checks rules of Hooks
+        'react-hooks/exhaustive-deps': 'error',
+        // Checks effect dependencies,
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+        'ulbi-tv-plugin/path-checker': [
+            'error',
+            {
+                alias: '@',
+            },
+        ],
         'ulbi-tv-plugin/layer-imports': [
             'error',
             {
@@ -84,9 +99,15 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/no-unstable-nested-components': 'warn',
     },
     globals: {
         __IS_DEV__: true,

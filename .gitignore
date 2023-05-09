@@ -4,7 +4,7 @@ node_modules
 /storybook-static
 .loki/report.html
 .loki/report.json
-/reports
+/reports/unit
 .iml
 # misc
 .DS_Store
